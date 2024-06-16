@@ -1,3 +1,27 @@
+const currentDateTimeDiv = document.getElementById('currentDateTime');
+
+function updateDateTime() {
+    const now = new Date();
+    let hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+
+    const timeString = `${hours}:${minutes}`;
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const dateString = now.toLocaleDateString('id-ID', options);
+
+    currentDateTimeDiv.innerHTML = `
+        <p>${timeString}
+        &nbsp;
+        ${dateString}
+        </p>
+    `;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
+
+
+
 function addNote() {
     const noteText = document.getElementById('noteText').value;
     const urgency = document.getElementById('urgencySelect').value;
