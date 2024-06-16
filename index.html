@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Notes App</h1>
+        <div class="note-input">
+            <textarea id="noteText" placeholder="Write your note here..."></textarea>
+            <div class="input-group-inline">
+                <label class="label-priority" for="urgencySelect">Priority:</label>
+                <select id="urgencySelect">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <label class="label-duedate" for="dueDate">Due:</label>
+                <input type="date" id="dueDate">
+            </div>
+            <button onclick="addNote()">Add Note</button>
+        </div>
+        <div id="notesContainer">
+            <h2>Active Notes</h2>
+        </div>
+        <div id="doneNotesContainer">
+            <h2>Done Notes</h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
